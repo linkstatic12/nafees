@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <h1>Billing</h1>
+  </div>
+<label for="male">From:</label>
+<input type="date" name="bday" ng-model = "FromDate">
+
+<label for="male">To:</label>
+<input type="date" name="bday" ng-model = "ToDate">
+ <button class="btn btn-default" ng-click="Search()">Search</button>
+<table class="table table-condensed" data-ng-if="vm.orders.length"> 
+  <thead> <tr> <th>Table</th><th>Total Price</th> <th>Created</th></tr> </thead> 
+
+  <tbody> 
+    <tr ng-repeat="order in vm.orders"> 
+     
+      <th scope="row">{{order.table}}</th> <td>Rs.{{order.totalPrice}}/-</td> <td>{{order.created | date:'mediumDate'}}</td> </tr> 
+      <tr> 
+     
+
+    </tbody> </table>
+    Total:{{total}}
+  <div class="alert alert-warning text-center" data-ng-if="vm.orders.$resolved && !vm.orders.length">
+    No Billings yet
+  </div>
+</section>

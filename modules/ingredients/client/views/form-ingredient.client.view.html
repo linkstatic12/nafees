@@ -1,0 +1,64 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.ingredient._id ? 'Edit Ingredient' : 'New Ingredient'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.ingredientForm" class="form-horizontal" ng-submit="vm.save(vm.form.ingredientForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.ingredient.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.ingredientForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Ingredient name is required.</p>
+          </div>
+        </div>
+          <label class="control-label" for="name">Calories </label>
+          <input name="name" type="text" ng-model="vm.ingredient.calories" id="calories" class="form-control" placeholder="calories" required>
+          <div ng-messages="vm.form.ingredientForm.calories.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Calories required</p>
+          </div>
+          <label class="control-label" for="name">Type</label>
+          <select name="multipleSelect" id="multipleSelect" ng-model="vm.ingredient.type">
+            <option value="Vegatable">Vegatable</option>
+            <option value="Fruit">Fruit</option>
+            <option value="Meat">Meat</option>
+            <option value="Derived">Derived</option>
+            <option value="Spice">Spice</option>
+            <option value="Flower">Flower</option>
+            <option value="Flower">Herb</option>
+             <option value="Flower">Plant</option>
+             <option value="Flower">Oil</option>
+          </select><br>
+           <label class="control-label" for="name">Cost Per </label>
+          <select name="multipleSelect" id="multipleSelect" ng-model="vm.ingredient.measurement">
+            <option value="Kilogram">Kilogram</option>
+            <option value="Gram">Gram</option>
+            <option value="Litre">Litre</option>
+            <option value="Milliliter">Milliliter</option>
+            <option value="Ounce">Ounce</option>
+        
+
+          </select> is <input ng-model="vm.ingredient.price"/>
+         
+          <div ng-messages="vm.form.ingredientForm.type.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Calories required</p>
+          </div>
+          <div class="form-group text-center">
+          <img ng-src="{{vm.imageURL}}" class="img-thumbnail user-profile-picture">
+        </div>
+        <div class="text-center form-group" ng-hide="vm.uploader.queue.length">
+          <span class="btn btn-default btn-file">
+              Select Image <input type="file" nv-file-select uploader="vm.uploader">
+          </span>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.ingredient._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

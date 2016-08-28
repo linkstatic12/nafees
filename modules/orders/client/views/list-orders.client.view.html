@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Orders</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="order in vm.orders"
+       data-ui-sref="orders.view({ orderId: order._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Requested on
+        <span data-ng-bind="order.created | date:'shortTime'"></span>
+        by
+        
+        <span>Table no.{{order.table}}</span>
+      </small>
+
+     <span  class="blink_me" ng-if="TimesUp(order)">Times up</span>
+      <span ng-hide="CheckTime(order)" am-time-ago="order.created"></span>
+      <span ng-show="CheckTime(order)" class="blink_me" am-time-ago="order.created"></span>
+    </a>
+  </div>
+  
+</section>
