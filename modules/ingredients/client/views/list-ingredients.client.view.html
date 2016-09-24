@@ -1,0 +1,47 @@
+<section>
+  <div class="page-header">
+    <h1>List Of Ingredients</h1>
+  </div>
+
+
+
+
+<table class="table table-condensed"> 
+  <thead> <tr> <th>Name</th><th>Updated By</th> <th>Price</th><th>Measurement</th><th>Updated On</th><th>Edit/Delete</th></tr> </thead> 
+
+  <tbody> 
+    <tr ng-repeat="ingredient in vm.ingredients"> 
+     
+      <th scope="row">{{ingredient.name}}</th> <td>{{ingredient.user.displayName}}</td> <td>{{ingredient.price}}</td><td>{{ingredient.measurement}}</td> <td>{{ingredient.updatedOn 
+      | date:'mediumDate'}}</td><td> 
+    <a class="btn btn-primary"
+       data-ui-sref="ingredients.edit({ ingredientId: ingredient._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" data-ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </td> </tr> 
+      <tr> 
+     
+
+    </tbody> </table>
+ <!--  <div class="list-group">
+    <a data-ng-repeat="ingredient in vm.ingredients"
+       data-ui-sref="ingredients.view({ ingredientId: ingredient._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Created on
+        <span data-ng-bind="ingredient.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-if="ingredient.user" data-ng-bind="ingredient.user.displayName"></span>
+        <span data-ng-if="!ingredient.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="ingredient.name"></h4>
+      
+    </a>
+  </div> -->
+  <div class="alert alert-warning text-center" data-ng-if="vm.ingredients.$resolved && !vm.ingredients.length">
+    No Ingredients yet, why don't you <a data-ui-sref="ingredients.create">create one</a>?
+  </div>
+</section>
