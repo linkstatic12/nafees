@@ -3,7 +3,9 @@
     <h1>Cuisines</h1>
     </div>
   <div class="list-group">
+
     <div data-ng-repeat="cuisine in vm.cuisines"
+
        data-ui-sref="cuisines.view({ cuisineId: cuisine._id })"
        class="list-group-item">
       <small class="list-group-item-text">
@@ -15,6 +17,7 @@
       </small>
       <h4 class="list-group-item-heading" data-ng-bind="cuisine.name"></h4>
        <img ng-src="{{cuisine.img}}" class="img-thumbnail user-profile-picture">
+
         <a class="btn btn-primary"
        data-ui-sref="cuisines.edit({ cuisineId: cuisine._id })">
       <i class="glyphicon glyphicon-edit"></i>
@@ -23,6 +26,7 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
     </div>
+
   </div>
   <div class="alert alert-warning text-center" data-ng-if="vm.cuisines.$resolved && !vm.cuisines.length">
     No Cuisines yet, why don't you <a data-ui-sref="cuisines.create">create one</a>?

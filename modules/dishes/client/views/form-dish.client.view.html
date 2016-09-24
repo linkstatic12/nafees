@@ -1,4 +1,6 @@
+
 <section>
+
   <div class="page-header">
     <h1>{{vm.dish._id ? 'Edit Dish' : 'New Dish'}}</h1>
   </div>
@@ -37,8 +39,9 @@
       <button ng-click="add()">Add Ingredient</button></br></br>
 </br>
 
-<label class="control-label" for="name">Additional Price:{{vm.dish.additional_price}}</label></br>
 
+<label class="control-label" for="name">Additional Price</label>
+ <input name="name" type="text" ng-model="vm.dish.additional_price" id="price" class="form-control" placeholder="price" required>
 
   <label class="control-label" for="name">Total Price: Rs.{{vm.dish.totalPrice}}/-</label>
        <div class="form-group text-center">

@@ -126,6 +126,7 @@
    vm.dish.totalPrice = parseFloat(vm.dish.price) +parseFloat(vm.dish.price*0.1);
    vm.dish.additional_price = parseFloat(vm.dish.price*0.1);
 
+
     },true);
 
     
