@@ -68,6 +68,7 @@
   getCuisine.$inject = ['$stateParams', 'CuisinesService'];
 
   function getCuisine($stateParams, CuisinesService) {
+    console.log("HE");
     return CuisinesService.get({
       cuisineId: $stateParams.cuisineId
     }).$promise;

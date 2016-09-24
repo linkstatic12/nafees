@@ -123,8 +123,8 @@
     }
 
     $scope.$watch('vm.dish.additional_price', function (newVal, oldVal) { 
-   vm.dish.totalPrice = parseFloat(vm.dish.price) +parseFloat(vm.dish.additional_price);
-   
+   vm.dish.totalPrice = parseFloat(vm.dish.price) +parseFloat(vm.dish.price*0.1);
+   vm.dish.additional_price = parseFloat(vm.dish.price*0.1);
 
     },true);
 
@@ -148,7 +148,8 @@ for(var i=0;i<newVal.length;i++)
 
 }
 vm.dish.price = $scope.price;
-vm.dish.totalPrice = parseFloat(vm.dish.price) +parseFloat(vm.dish.additional_price);
+vm.dish.totalPrice = parseFloat(vm.dish.price) +parseFloat(vm.dish.price*0.1);
+vm.dish.additional_price = parseFloat(vm.dish.price*0.1);
 
    }, true);
     // Save Dish
