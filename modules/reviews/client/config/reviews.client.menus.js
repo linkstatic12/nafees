@@ -22,11 +22,6 @@
       state: 'reviews.list'
     });
 
-    // Add the dropdown create item
-    menuService.addSubMenuItem('topbar', 'reviews', {
-      title: 'Create Review',
-      state: 'reviews.create',
-      roles: ['user']
-    });
+    
   }
 })();

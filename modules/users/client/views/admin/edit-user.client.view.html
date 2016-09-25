@@ -22,10 +22,20 @@
         <div class="form-group" show-errors>
           <label class="control-label" for="roles">Roles</label>
           <div class="controls">
+
             <input class="form-control" type="text" name="roles" ng-model="vm.user.roles" id="roles" ng-list required />
             <div ng-messages="vm.userForm.roles.$error" role="alert">
               <p class="help-block error-text" ng-message="required">At least one role is required.</p>
             </div>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="roles">Active</label>
+          <div class="controls">
+
+             <input type="radio" name="response2" data-ng-model="vm.user.active" ng-value="true" />
+             <input type="radio" name="response1" data-ng-model="vm.user.active" ng-value="false" />
+           <em>{{vm.user.active}}</em>
           </div>
         </div>
         <div class="form-group">

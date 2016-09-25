@@ -10,23 +10,23 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Cuisines',
+      title: 'Main Menu',
       state: 'cuisines',
       type: 'dropdown',
-      roles: ['admin']
+      roles: ['manager']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'cuisines', {
-      title: 'List Cuisines',
+      title: 'List Main Menu',
       state: 'cuisines.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'cuisines', {
-      title: 'Create Cuisine',
+      title: 'Manage Main Menu',
       state: 'cuisines.create',
-      roles: ['admin']
+      roles: ['manager']
     });
   }
 })();

@@ -13,7 +13,7 @@
       title: 'Ingredients',
       state: 'ingredients',
       type: 'dropdown',
-      roles: ['admin']
+      roles: ['manager']
     });
 
     // Add the dropdown list item
@@ -24,9 +24,9 @@
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'ingredients', {
-      title: 'Create Ingredient',
+      title: 'Manage Ingredient',
       state: 'ingredients.create',
-      roles: ['admin']
+      roles: ['manager']
     });
   }
 })();

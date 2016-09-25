@@ -25,8 +25,16 @@ exports.signup = function (req, res) {
   // Init user and add missing fields
   var user = new User(req.body);
   user.provider = 'local';
-  user.displayName = user.firstName + ' ' + user.lastName;
 
+  user.displayName = user.firstName + ' ' + user.lastName;
+User.count({provider: 'local'}, function(err, c) {
+    if(c==0)
+      {user.roles[0]="admin";
+user.roles[1] = "user";
+user.active = true;
+  }
+
+     
   // Then save the user
   user.save(function (err) {
     if (err) {
@@ -47,6 +55,9 @@ exports.signup = function (req, res) {
       });
     }
   });
+
+      });
+
 };
 
 /**

@@ -5,10 +5,11 @@
     .module('core')
     .controller('HeaderController', HeaderController);
 
-  HeaderController.$inject = ['$scope', '$state', 'Authentication', 'menuService','Socket','toastr'];
+  HeaderController.$inject = ['$scope', '$state', 'Authentication', 'menuService','Socket','toastr','$rootScope'];
 
-  function HeaderController($scope, $state, Authentication, menuService,Socket,toastr) {
+  function HeaderController($scope, $state, Authentication, menuService,Socket,toastr,$rootScope) {
     var vm = this;
+
       init();
   function init() {
       // If user is not signed in then redirect back home

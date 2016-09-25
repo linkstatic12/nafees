@@ -12,6 +12,7 @@ module.exports = {
       js: [
         // bower:js
         'public/lib/angular/angular.js',
+        'public/theme/js/jquery.min.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',
@@ -22,7 +23,8 @@ module.exports = {
         'public/lib/angular-toastr/dist/angular-toastr.tpls.js',
         'public/lib/moment/min/moment.min.js',
         'public/lib/moment/min/moment-with-locales.min.js',
-        'public/lib/angular-moment/angular-moment.js'
+        'public/lib/angular-moment/angular-moment.js',
+        'public/theme/js/app.js'
        
       
         // endbower
@@ -31,7 +33,8 @@ module.exports = {
     },
     css: [
       'modules/*/client/css/*.css',
-      'public/lib/angular-toastr/dist/angular-toastr.css'
+      'public/lib/angular-toastr/dist/angular-toastr.css',
+      'public/theme/css/app.css'
     ],
     less: [
       'modules/*/client/less/*.less'

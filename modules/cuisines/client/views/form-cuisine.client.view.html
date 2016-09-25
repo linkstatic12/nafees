@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.cuisine._id ? 'Edit Cuisine' : 'New Cuisine'}}</h1>
+    <h1>{{vm.cuisine._id ? 'Edit Main Menu' : 'New Main Menu'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.cuisineForm" class="form-horizontal" ng-submit="vm.save(vm.form.cuisineForm.$valid)" novalidate>
@@ -9,7 +9,7 @@
           <label class="control-label" for="name">Name</label>
           <input name="name" type="text" ng-model="vm.cuisine.name" id="name" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.cuisineForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Cuisine name is required.</p>
+            <p class="help-block error-text" ng-message="required">Main Menu name is required.</p>
           </div>
 
         </div>

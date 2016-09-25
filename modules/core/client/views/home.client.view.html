@@ -1,23 +1,25 @@
-<section>
-
-  <div class="jumbotron text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" style="margin-left:80px" src="modules/core/client/img/brand/logo.png" />
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <p class="lead">
-        Online Restraunt Menu
-      </p>
-    </div>
-  
-  </div>
-
-
- 
-
-  
- 
-</section>
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp"> 
+  <div class="container aside-xl" style="width: 40% !important;">
+   <a class="navbar-brand block" href="index.html">Nafees</a>
+    <section class="m-b-lg">
+     <header class="wrapper text-center">
+      <strong>Administration Panel<strong> </header>
+       <form ng-submit="vm.signin(vm.userForm.$valid)" novalidate autocomplete="off">
+       	 <fieldset>
+        <div class="list-group"> 
+        	<div class="form-group" show-errors>
+        	 <input type="email" placeholder="Username" name="username" class="form-control no-border" ng-model="vm.credentials.username" lowercase required> 
+        	 <div ng-messages="vm.userForm.username.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Username is required.</p>
+          </div>
+        	</div> <div class="form-group" show-errors>
+        	 <input type="password" placeholder="Password" name="password" ng-model="vm.credentials.password"class="form-control no-border"> <div ng-messages="vm.userForm.password.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Password is required.</p>
+          </div> </div> 
+        	</div> 
+        	<button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button> 
+        	<div class="text-center m-t m-b"></div>
+        	 <a ui-sref="authentication.signup" class="btn btn-lg btn-default btn-block">Create an account</a> 
+        	  </fieldset></form> </section> <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+          <span ng-bind="vm.error"></span>
+        </uib-alert> </div> </section>

@@ -29,10 +29,13 @@
         <a ui-sref="authentication.signin">Sign In</a>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
+
+    <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user" ng-show="vm.authentication.user">
+     
       <li class="dropdown" uib-dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
-          <img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" />
+          <span class="thumb-sm avatar pull-left"> 
+          <img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" /></span>
           <span ng-bind="vm.authentication.user.displayName"></span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu" role="menu">

@@ -13,7 +13,7 @@
       title: 'Dishes',
       state: 'dishes',
       type: 'dropdown',
-      roles: ['admin']
+      roles: ['manager']
     });
 
     // Add the dropdown list item
@@ -24,9 +24,9 @@
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'dishes', {
-      title: 'Create Dish',
+      title: 'Manage Dish',
       state: 'dishes.create',
-      roles: ['admin']
+      roles: ['manager']
     });
   }
 })();

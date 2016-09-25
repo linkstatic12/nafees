@@ -24,7 +24,7 @@ exports.update = function (req, res) {
 
   // For security measurement do not use _id from the req.body object
   delete req.body._id;
-
+console.log(user.active);
   if (user) {
     // Merge existing user
     user = _.extend(user, req.body);

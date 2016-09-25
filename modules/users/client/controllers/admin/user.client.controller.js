@@ -37,6 +37,7 @@
       }
 
       var user = vm.user;
+      console.log(user.active);
 
       user.$update(function () {
         $state.go('admin.user', {
