@@ -32,7 +32,7 @@
           dishResolve: newDish
         },
         data: {
-          roles: ['admin'],
+          roles: ['manager'],
           pageTitle : 'Dishes Create'
         }
       })
@@ -42,11 +42,11 @@
         controller: 'DishesController',
         controllerAs: 'vm',
         resolve: {
-          roles: ['admin'],
+          roles: ['manager'],
           dishResolve: getDish
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'manager'],
           pageTitle: 'Edit Dish {{ dishResolve.name }}'
         }
       })

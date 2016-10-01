@@ -1,6 +1,6 @@
-<section id="content" class="m-t-lg wrapper-md animated fadeInUp"> 
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp" style="margin-top:15%;"> 
   <div class="container aside-xl" style="width: 40% !important;">
-   <a class="navbar-brand block" href="index.html">Nafees</a>
+   <img src="/modules/core/client/img/brand/nafees.png" class="header-profile-image" />
     <section class="m-b-lg">
      <header class="wrapper text-center">
       <strong>Administration Panel<strong> </header>
@@ -8,7 +8,7 @@
        	 <fieldset>
         <div class="list-group"> 
         	<div class="form-group" show-errors>
-        	 <input type="email" placeholder="Username" name="username" class="form-control no-border" ng-model="vm.credentials.username" lowercase required> 
+        	 <input type="text" placeholder="Username" name="username" class="form-control no-border" ng-model="vm.credentials.username" lowercase required> 
         	 <div ng-messages="vm.userForm.username.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Username is required.</p>
           </div>

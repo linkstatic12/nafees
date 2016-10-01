@@ -18,13 +18,13 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'dishes', {
-      title: 'List Dishes',
+      title: 'Manage Dish',
       state: 'dishes.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'dishes', {
-      title: 'Manage Dish',
+      title: 'Create Dishes',
       state: 'dishes.create',
       roles: ['manager']
     });

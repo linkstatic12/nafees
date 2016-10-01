@@ -42,7 +42,7 @@
         vm.authentication.user = response;
 
         // And redirect to the previous or home page
-        $state.go('home');
+        $state.go('cuisines.list');
       }).error(function (response) {
         vm.error = response.message;
       });
@@ -61,7 +61,7 @@
       { $rootScope.topbarActive = true;
       
         // And redirect to the previous or home page
-        $state.go( 'dash');}
+        $state.go( 'cuisines.list');}
        
       }).error(function (response) {
         vm.error = response.message;

@@ -153,20 +153,30 @@ exports.PlaceOrder = function(req,res)
   var io = req.app.get('socketio');
   var data = req.body.data;
   console.log(data);
+  var dishid= [data[0].dish];
   var Dishes = [{dish:data[0].dish,noOfPlates:data[0].noOfPlates,flavour:data[0].flavour}];
   for(var i in data)
   {
     if(i>0)
     {
+      dishid.push(data[i].dish);
     Dishes.push({dish:data[i].dish,noOfPlates:data[i].noOfPlates,flavour:data[i].flavour});
   }
 
   }
-  
-  var order = new Order();
+  console.log(dishid[0]);
+  Dish.find({ _id: { "$in" : dishid} }).exec(function(err,dish){
+var time = 20;
+for(var dis in dish)
+{
+if(dish[dis].time > time)
+  time = dish[dis].time;
+}
+var order = new Order();
   order.totalPrice =req.body.totalPrice;
   order.table = req.body.table;
   order.Dishes = Dishes;
+
 
   order.save(function(err) {
     if (err) {
@@ -178,9 +188,12 @@ exports.PlaceOrder = function(req,res)
          type: 'status',
         data:order
       });
-      res.json("SUCCESS");
+      res.json({'time':time,id:order._id});
     }
   });
+
+  });
+  
 
  
 }
@@ -226,4 +239,29 @@ order.completed =  true;
     }
   });
 
+}
+
+exports.DelOrder = function(req,res)
+{
+console.log(req.body.id);
+Order.findById(req.body.id).exec(function(err,order){
+console.log(order);
+
+  if(!err)
+  {order.remove(function(err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+     res.jsonp("SUCCESS");
+
+    }
+  });
+    
+  }
+    
+});
+
+  
 }

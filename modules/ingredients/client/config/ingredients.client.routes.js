@@ -32,7 +32,7 @@
           ingredientResolve: newIngredient
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['manager'],
           pageTitle : 'Ingredients Create'
         }
       })
@@ -45,7 +45,7 @@
           ingredientResolve: getIngredient
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['manager'],
           pageTitle: 'Edit Ingredient {{ ingredientResolve.name }}'
         }
       })

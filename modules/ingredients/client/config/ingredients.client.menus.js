@@ -18,13 +18,13 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'ingredients', {
-      title: 'List Ingredients',
+      title: 'Manage Ingredients',
       state: 'ingredients.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'ingredients', {
-      title: 'Manage Ingredient',
+      title: 'Create Ingredient',
       state: 'ingredients.create',
       roles: ['manager']
     });

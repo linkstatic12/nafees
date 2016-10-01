@@ -6,11 +6,11 @@
     .module('dishes')
     .controller('DishesController', DishesController);
 
-  DishesController.$inject = ['$scope', '$state', 'Authentication', 'dishResolve','$http','FileUploader','$timeout','$window'];
+  DishesController.$inject = ['$rootScope','$scope', '$state', 'Authentication', 'dishResolve','$http','FileUploader','$timeout','$window'];
 
-  function DishesController ($scope, $state, Authentication, dish,$http,FileUploader,$timeout,$window) {
+  function DishesController ($rootScope,$scope, $state, Authentication, dish,$http,FileUploader,$timeout,$window) {
     var vm = this;
-
+ $rootScope.topbarActive = true;
     vm.authentication = Authentication;
     vm.dish = dish;
     vm.dish.price = 0;

@@ -20,7 +20,7 @@
         controller: 'CuisinesListController',
         controllerAs: 'vm',
         data: {
-          roles:['admin'],
+          roles:['admin','manager','chef'],
           pageTitle: 'Cuisines List'
         }
       })
@@ -33,7 +33,7 @@
           cuisineResolve: newCuisine
         },
         data: {
-          roles: ['admin'],
+          roles: ['manager'],
           pageTitle : 'Cuisines Create'
         }
       })
@@ -46,7 +46,7 @@
           cuisineResolve: getCuisine
         },
         data: {
-          roles: ['admin'],
+          roles: ['manager'],
           pageTitle: 'Edit Cuisine {{ cuisineResolve.name }}'
         }
       })
@@ -56,7 +56,7 @@
         controller: 'CuisinesController',
         controllerAs: 'vm',
         resolve: {
-           roles: ['admin'],
+           roles: ['admin','manager','chef'],
           cuisineResolve: getCuisine
         },
         data:{
